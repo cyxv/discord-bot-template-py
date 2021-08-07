@@ -1,7 +1,7 @@
 token = ""  # Your Discord bot token goes in here.
 
 import time
-timerStart = time.time()
+timerStart = time.time()  # This is used for showing how long the bot took to load.
 
 import discord
 from discord.ext import commands  # Basically imports everything you need in this file. (the main one, commands will be written in cogs)
@@ -19,8 +19,8 @@ for extension in extensions:  # This loads all the extensions in the list. (if f
     
 @client.event
 async def on_ready():
-  sec = round(time.time() - timerStart, 4)
+  sec = round(time.time() - timerStart, 4)  # How long the bot took to load.
   print("Bot loaded in {} seconds.".format(sec))
   
 print("Starting bot...")
-client.run(token)
+client.run(token)  # Actually runs the bot. Nothing can be ran after this in the file, hence the on_ready() function.
